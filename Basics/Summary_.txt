@@ -1,0 +1,58 @@
+
+
+
+for - else 문
+
+for i in range(1, 11):
+    print(i)
+    if i == 5:					if i > 15
+        break
+else:           #break 안 걸리고 1~10 정상 종료되면 for문 다돌고 튀나옴.   
+    print(11)
+
+
+
+for i in range(5):
+    print('i:', i, sep='', end=' ')  #sep으로 print에서, 가 스페이스 안 띄움
+    for j in range(5):
+        print('j:', j, sep='', end=' ')
+
+#   i:0 j:0 j:1 j:2 j:3 j:4      원래 print(?, ?) 면 한칸씩 띄워짐.. sep으로 막은 것
+
+
+
+
+for i in range(5):
+    for _ in range(i + 1):   #바디에 _나 j가 없으니 걍 원소 개수만큼 반복
+        print("*", end=' ')
+    print()
+
+* 
+* * 
+* * * 
+* * * * 
+* * * * * 
+
+
+
+===========================================
+string builtin
+.upper()
+.lower()
+
+a = 'hello'
+a[0]
+print(a.find('h'))    #h의 index 뱉음
+a.count('h') /     #h의 개수
+
+.isupper() / .islower()
+.isalpha()
+
+print(ord(A)) #65
+printchr(65))  #"A"
+
+
+
+=======================================
+list
+
