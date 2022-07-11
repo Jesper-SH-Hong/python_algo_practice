@@ -25,7 +25,7 @@ max_ = -2147000   # C++ int = 4byte = - 2^31 ~ 2^ 31-1 ( 0 포함)
 
 for x in a:
     tot = digit_sum(x)
-    if tot > max:
+    if tot > max_:
         max_ = tot
         res = x
 
