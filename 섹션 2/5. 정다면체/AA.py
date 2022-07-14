@@ -18,7 +18,7 @@ import sys
 n = 6
 m = 4
 
-cnt = [0] * (n+m+3)    # 0,1 없을거고 . n+m+1 인덱스에 n+m이 들어가게 될테니
+cnt = [0] * (n+m+1)    # n+m+1인덱스에 n+m이 들어가게 될테니
 max_ = -2147000000
 
 for num1 in range(1, n+1):
@@ -33,3 +33,4 @@ for i in range(n+m+1):
     if cnt[i] == max_:
         print(i, end=' ')
 
+print(cnt)
