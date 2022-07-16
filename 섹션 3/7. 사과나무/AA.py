@@ -1,27 +1,20 @@
-n = 5
+import sys
 
-a = [
-    [10, 13, 10, 12, 15],
-    [12, 39, 30, 23, 11],
-    [11, 25, 50, 53, 15],
-    [19, 27, 29, 37, 27],
-    [19, 13, 30, 13, 19],
-]
-mid_idx = n // 2
-sum = 0
-for i in range(mid_idx + 1):
-    sum += a[i][mid_idx]
-    if i != 0:
-        for j in range(1, i + 1):
-            sum += a[i][mid_idx + j]
-            sum += a[i][mid_idx - j]
+sys.stdin = open("input.txt", 'r')
+n = int(input())
+a = [list(map(int, input().split())) for _ in range(n)]
 
-for i in range(n-1, mid_idx, -1):
-    sum += a[i][mid_idx]
+res = 0
+s = e = n // 2  # 첨에 가운데서 출발!
 
-    if i != n-1:
-        for j in range(1, n - i):
-            sum += a[i][mid_idx + j]
-            sum += a[i][mid_idx - j]
+for i in range(n):
+    for j in range(s, e + 1):
+        res += a[i][j]
+    if i < n // 2:
+        s -= 1
+        e += 1
+    else:
+        s += 1
+        e -= 1
 
-print(sum)
+print(res)
