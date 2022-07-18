@@ -6,7 +6,18 @@ n = int(input())
 
 a = list(map(int, input().split()))
 
-avg = round(sum(a) / n)
+#avg = round(sum(a) / n) # 파이썬 round = round_half_even 방식 = 정확히 half 지점이면 even(짝수)값으로 근사를 취함. 4와 5 사이면 4로 ㅎㅎ
+                        #   round(a)= 4.500 0 -> 4       4.5111 -> 5
+                        #   5.5   -> 6(even)
+                        # round_half_up 방식으로 해야 함..
+
+
+#d =66.4, 66.5, 66.9
+#d = a + 0.5     // 66.9  67  67.4
+#d = int(d)      //66 67 67
+
+avg = int(sum(a)/n + 0.5)
+
 
 min = 2147000000  # 4byte 2^32 /2
 
