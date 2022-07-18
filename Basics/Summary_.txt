@@ -1,7 +1,7 @@
 
 
 
-for - else 문
+for-else 문
 
 for i in range(1, 11):
     print(i)
@@ -56,3 +56,121 @@ printchr(65))  #"A"
 =======================================
 list
 
+a=[]
+a = list()
+
+두 리스트 합치기
+s = a + b
+
+리스트 원소 추가
+a.append(3)
+a.insert(3,7)  [3]에 원소 7 삽입
+
+a.pop(3)   [3]의 원소 사라지고 당겨짐
+
+.remove(4)  # 해당 값을 찾아 제거
+
+a.index(5)  #해당 값을 가진 인덱스 리턴(중복 시 가장 앞 인덱스)
+
+sum(a)  # 리스트 원소 합
+max(a)
+min(7,5) # 5 enf wnd chlthrkqt
+
+리스트 섞기
+random.shuffle(a)
+
+a.sort()
+a.sort(reverse=True)
+a.reverse()
+
+a.clear()  // 리스트 내부 삭제
+
+리스트는 원소 접근, 변경 가능
+튜플은 b[2] = 2 불가 immutable
+
+
+
+
+2d_list
+
+a = [0] * 3
+
+a = [   [0] * 3 for _in range(3)  ]
+
+#[[0, 0, 0], [0, 0, 0], [0, 0, 0]]
+   a[0][1] = 1
+
+for row in a:
+    print(row)
+
+[0, 1, 0]
+[0, 0, 0]
+[0, 0, 0]
+
+
+
+for row in a:
+    for col in row:
+        print(col, end=" ")
+0 1 0 0 0 0 0 0 0 
+======================================
+enum
+
+for x in enumerate(a):      (일종의 어레이 같이 인덱스- 값 (0, 철수) (1, 영희)  이렇게 리턴)
+    print(x) 
+
+for x in enumerate(a):
+    print(x[0], x[1])  #  0 철수
+
+
+for idx, val in enumerate(a):
+    print(idx, val)
+
+
+==================================================
+all vs any
+
+if all(60 > x for x in a):
+    print("All young")
+else:
+    print("No")
+
+if any(19 > x for x in a):
+    print("at least 1 young boy")
+else:
+    print("old...")
+
+
+=============================================
+fn return vs print
+
+def is_prime(n):
+    for denom in range(2, n):
+        if n % denom == 0:
+            return False     #return은 함수를 종료하시오. 더 이상 iterate 안함.
+            #약수 2에서 바로 걸리면 False를 리턴하고 종료함. 함수 종료니 아래 True까지 갈 일이 없음
+            #7이면 for문이 6까지 돌고 끝남.. return false 안함.. 즉 함수가 종료되지 않음.
+    return True # 그렇지 않으면 True를 뱉으시오.
+
+
+
+lambda 함수 (1줄, 간단용)
+
+a=[1, 2, 3]
+print(list(map(lambda x: x+1, a)))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2-2
+print(f"  {case +1} {new_list[k-1]})

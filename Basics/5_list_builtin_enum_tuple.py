@@ -32,8 +32,10 @@ print(a)
 a.remove(4)  # 그 값을 제거
 print(a)
 
+
+k = [1,2,3,5,5]
 # 찾는 elem의 인덱스 리턴
-print(a.index(5))
+print(k.index(5))
 
 # sum, max, min
 a = list(range(1, 11))
