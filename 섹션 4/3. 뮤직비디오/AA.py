@@ -1,6 +1,7 @@
 n = 9
-m = 3
+m = 9  # ###반례 발생..  기존 코드는 9분짜리 노래를 하나에 담을 수 없음.. 결과를 1로 뱉음..
 playtimes = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+longest = max(playtimes) ####
 lt = 1
 rt = sum(playtimes)  # 45     9곡을 1장에 담으면 45분.. 길지만 답은 되겠지 ㅋㅋㅋ
 
@@ -34,7 +35,7 @@ def count(disc_capa):
 
 while lt <= rt:
     mid = (lt + rt) // 2
-    if count(mid) <= m:  # 만약 결과가 2? 오 2장으로 되면 3장에도 쌉가능이니 ㅋㅋ
+    if mid >= longest and count(mid) <= m:  #노래 중 가장 긴 노래보다는 dvd 하나의 용량이 크거나 같아야 한다규. 디스크에 무조건 1곡은 담기게.
         res = mid
         rt = mid - 1
     else:
