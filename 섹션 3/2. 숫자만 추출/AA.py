@@ -16,7 +16,7 @@ print(res)
 
 cnt = 0
 
-for i in range(1, res):  #자기 자신도 약수니까..! res//2 노노
+for i in range(1, res + 1):  #자기 자신도 약수니까..! res//2 노노
     if res % i == 0:
         cnt += 1
 
