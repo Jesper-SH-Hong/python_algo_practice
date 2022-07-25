@@ -20,7 +20,7 @@ def count(interval):
 
     return cnt
 
-    return n // interval
+
 
 
 while lt <= rt:
