@@ -1,0 +1,31 @@
+Queue 자료 구조(세차장):
+FIFO. deque 사용
+
+중복이 예민한 문제면.. deque로
+아니면 sorting
+
+
+
+
+
+req="CBA"
+
+dq = deque(req)   #필수과목 넣기
+print(dq)
+deque(['C', 'B', 'A'])
+
+
+dq.append("CBA")
+print(dq)
+
+deque(['C', 'B', 'A', 'CBA'])
+
+
+
+# str1 = dict()
+# str2 = dict()
+#
+# for x in a:
+#     str1[x] = str1.get(x, 0) + 1  #str1 안에 x란 키가 없으면 디폴트인 0을 리턴, 거기에 +1, 있으면 그 키의 밸류를 리턴.  거기다 +1 누적하자 ㅋㅋ
+
+#기존 딕셔너리에 없는 키도 이렇게 추가 가능 ㅇㅇ
