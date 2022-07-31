@@ -2,6 +2,7 @@
 
 # BFS는 Queue 갖고 추훙헤 배울 것.
 
+# 파이썬에서는 null이 "None"임!!!
 
 # 전위순회 코드 구조:
 # DFS():
@@ -10,10 +11,12 @@
 #    D(r)
 
 # 전위순회: 호출 시작점(루트노드)에서 먼저 일 처리하고, 왼쪽으로 뻗음
-# 전위: Root -> L ->R   이렇게 출력                                   1 2 4 5 3 6 7
-# 중위: L -> Root -> R : 왼쪽 leaf까지 갔다가 leaf위 부모 갔다 오른쪽     4 2 5 1 6 3 7
-# 후위: L 출력-> R출력 -> Root                                        4 5 2 6 7 3 1
+# 전위(preorder travers): Root -> L ->R   이렇게 출력                                   1 2 4 5 3 6 7
+# 중위(inorder traversal): L -> Root -> R : 왼쪽 leaf까지 갔다가 leaf위 부모 갔다 오른쪽     4 2 5 1 6 3 7
+# 후위(postorder travers): L 출력-> R출력 -> Root                                        4 5 2 6 7 3 1
 
+# https://gnujoow.github.io/ds/2016/09/01/DS4-TreeTraversal/
+# levelorder = BFS  queue 구조 사용
 
 # 루트의 좌우자식 호출법:
 #   1
@@ -53,6 +56,10 @@ def DFS_3(v):  # 후위  : 병합 정렬!!!!!!!!!!
         DFS_3(v * 2 + 1)
         print(v, end=' ')  # 부모 처리
 
+
+#   1
+#  2  3
+# 4 5 6 7         #부모값 *2 = L child 값   부모값 *2 + 1 = R child 값
 
 # stack: D1- D2 - D4 - D8(x)
 # stack: D1-D2-D4-D9(X)
