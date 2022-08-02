@@ -12,9 +12,9 @@ import sys
 #       D(2)        D(2)
 #     o /  \x     o/   \x
 #    D(3)
-#   o/ \x
-#  D(4) D(4)          ..말단 if문에 걸려 return할 것.
-#  123   12
+#   o/   \x
+#  D(4)   D(4)          ..말단 if문에 걸려 return할 것.
+#  1,2,3   1,2
 
 
 def DFS(v):
@@ -37,3 +37,17 @@ if __name__ == "__main__":
 
     DFS(1)
 
+# (릿코드 94. 중위 순회. 참고하셈셈)# class Solution:
+#     def inorderTraversal(self, root: Optional[TreeNode]) -> List[int]:
+#         res = []
+#
+#         def DFS(root, res):
+#             if root == None:
+#                 return
+#             else:
+#                 DFS(root.left, res)
+#                 res.append(root.val)
+#                 DFS(root.right, res)
+#
+#         DFS(root, res)
+#         return res
