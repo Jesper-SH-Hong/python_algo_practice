@@ -5,9 +5,9 @@ b = "baeeACA"
 #[풀이2]
 sH = dict()   #string hash
 for x in a:
-    sH[x] = sH[x] = sH.get(x,0) + 1
+    sH[x] = sH.get(x,0) + 1
 for x in b:
-    sH[x] = sH[x] = sH.get(x,0) - 1
+    sH[x] = sH.get(x,0) - 1
 
 for x in a:
     if sH.get(x) > 0:  #잉 다 못 지웠냐?

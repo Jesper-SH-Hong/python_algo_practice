@@ -31,14 +31,17 @@ deque(['C', 'B', 'A', 'CBA'])
 #기존 딕셔너리에 없는 키도 이렇게 추가 가능 ㅇㅇ
 
 
-=====================
+==============================================
+07.31  global vs local
+
+
 def DFS1():
         cnt=3       #로컬 변수 생성
         print(cnt)  #3출력
 
 def DFS2():
-    if cnt==5:          #해결법: 위에 global cnt 추가
-        cnt=cnt+1     #이 declare때문에 인터프리터는 DFS2의 모든 cnt를 local var로 인식, 바로 윗줄의 cnt가 먼저 declare되지 않았다고 에러냄.
+    if cnt == 5:        #2)해결법: 위에 global cnt 추가
+        cnt = cnt+1     #1)이 선언 땜에 인터프리터는 DFS2의 모든 cnt를 local var로 인식, 바로 윗줄의 cnt가 먼저 declare되지 않았다고 에러냄.
         print(cnt) # 6 출력
 
 if __name__ == "__main__":
@@ -57,7 +60,7 @@ a[0]=7 이 라인은 인터프리터 번역 시 새로운 "로컬 리스트 생�
 
 def DFS():
         a[0]= 7    걍 전역 변수에 변경
-        a = [7,8]     이건 로컬리스트 생성. 이렇게 이름이 바뀌어야
+        a = [7,8]     이건 '='이라라로컬리스트 생성. 이렇게 변수명에 바뀌어야.
         print(a)    #[7,8]
 
 def DFS2():
