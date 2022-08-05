@@ -3,9 +3,12 @@
 
 def DFS(L, sum):
     global res
+    if L > res: # 뭐라도 res 찾았으면 그게 최초니 최소 개수일것.. 다음 레벨 뭐하러 가냐 커트!
+        return
 
     if sum > m:  # 커트!!
         return
+
     if sum == m:
         if L < res:
             res = L
