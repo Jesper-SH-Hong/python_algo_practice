@@ -21,13 +21,20 @@
 
 
 def DFS(len):
+    if dy[len] > 0:      #final. cutting edge. leaf까지 뻗지 말고 걍 그거 리턴해버려라.
+        return dy[len]
     if len == 1 or len ==2:
         return len
     else:
-        return DFS(len-1) + DFS(len-2)
+        # return DFS(len-1) + DFS(len-2)    이대로도 답은 나옴
 
+        dy[len] = DFS(len-1) + DFS(len-2)  #1)메모이제이션. 아직 가지 컷은 안함
+        return dy[len]                      #메모이제이션을 하므로 Dynamic programming임. 이거 없으면 걍 recursion임..
 
 if __name__ =="__main__":
     n = 7
     dy= [0]* (n+1)   #메모이제이션 용
     print(DFS(n))
+
+
+
