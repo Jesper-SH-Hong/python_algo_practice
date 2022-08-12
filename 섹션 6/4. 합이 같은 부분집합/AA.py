@@ -45,7 +45,7 @@ if __name__ == "__main__":
     # n = int(input())
     # a = list(map(int, input().split()))
     n = 6
-    a = 1, 3, 5, 6, 7, 10
+    a = [1, 3, 5, 6, 7, 10]
     total = sum(a)
     DFS(0, 0)
     print("NO")
