@@ -13,20 +13,23 @@ n = 5
 m = 2
 
 a = [60, 50, 70, 80, 90]
+def track(n,m,a):
+    q = [(pos, emergency) for pos, emergency in enumerate(a)]
 
-q = [(pos, emergency) for pos, emergency in enumerate(a)]
+    print(q)
 
-print(q)
+    q = deque(q)
+    cnt = 0
 
-q = deque(q)
-cnt = 0
+    while True:
+        cur = q.popleft()
+        if any(cur[1] < x[1] for x in q):
+            q.append(cur)
+        else:
+            cnt+=1
+            if cur[0] == m:
+                # print(cnt)
+                # break
+                return cnt
 
-while True:
-    cur = q.popleft()
-    if any(cur[1] < x[1] for x in q):
-        q.append(cur)
-    else:
-        cnt+=1
-        if cur[0] == m:
-            print(cnt)
-            break
+print(track(5, 2, a))
