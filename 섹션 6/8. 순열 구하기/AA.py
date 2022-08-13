@@ -4,7 +4,7 @@
 
 def DFS(L):
     global res
-    # global ch   ch=[~~]가 아니니  사실 위아래 둘다 없어도 돔.
+    global ch   #ch '=' [~~]가 아니니  사실 위아래 둘다 없어도 돔.(ch[L]임.. ch = 이 아니라)
     if L == m:
         global cnt
         for j in range(L):
