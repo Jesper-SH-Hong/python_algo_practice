@@ -66,11 +66,28 @@
 
 from collections import deque
 
-MAX = 100000  #좌표의 최대값
+MAX = 10000  #주어진 좌표의 최대값
 ch = [0] * (MAX+1) #좌표를 idx로 쓸라니까.. 1부터 쓰게
 dis = [0] * (MAX+1)
 
-s = 5
-e = 14
+n = 5   #출발점
+m = 14  #목표점
 
-ch[n]
+ch[n] = 1   #출발점이니.. 이미 방문했다.
+dis[n] = 0  #출발점이니 거리는 출발점으로부터 0
+
+dq = deque()
+dq.append(n)
+
+while dq:   #출발점을 추가했으니 비어있진 않음. 비어야 멈출 것. BFS는 비어야 멈춤
+    now = dq.popleft()  #now는 현지점
+    if now == m:
+        break
+    for next_ in (now-1, now+1, now+5):   #이러면 저 3갈래로 퍼짐.. 튜플 값을 하나하나 탐색.
+        if 0 <next_ <= MAX: #음수 좌표는 없다 ㅐㅎㅆ으니 음수로는 가면 안됨. 좌표는 1부터 10000까지였음
+            if ch[next_] ==0:  #방문한 곳이면 탐색하지 말자.
+                dq.append(next_)
+                ch[next_] = 1
+                dis[next_] = dis[now] + 1 # 자기 부모에서 거리 1 추가
+
+print(dis[m])  #몇번 만에 거길 갔을까요?
