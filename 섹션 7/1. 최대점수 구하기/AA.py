@@ -4,32 +4,30 @@
 # 제한시간 M 내에 N개의 문제들을 최대한 풀어 낼 최고점은?
 
 
-
 # [[10, 5], [25, 12], [15, 8], [6, 3], [7, 4]]
 # 첫 문제를 풀거냐 말거냐, 두번째를 풀거냐 말거냐,, 이렇게 결정하는 문제임. 즉 2가닥 상태트리 푼다 안푼다.
 # 집합 {1, 2, 3, 4, 5}  -> 부분집합 만들기. 그 시간 내에 풀 수 있으면 그거의 sum을ㅇㅇ
 
 
-def DFS(v):
-    global max_
-    if v == n:
-        if sum(res) > max_:
-            max_ = sum(res)
+def DFS(L, sum, time):
+    global res
+    if time > m:
+        return
+    if L == n:
+        if sum > res:
+            res = sum
+        # return      님 갑자기 왜 헷갈리심 ㅋㅋ 알아서 콜백으로 갈테니..
     else:
-        res[v] = 1
-        DFS(v+1)
-        res[v] = 0
-        DFS(v+1)
-
+        DFS(L + 1, sum + pv[L], time + pt[L])
+        DFS(L + 1, sum, time)
 
 
 if __name__ == "__main__":
     n = 5
     m = 20
     # a = [[10, 5], [25, 12], [15, 8], [6, 3], [7, 4]]
-    pv = [10, 25, 12, 15, 6, 3]
-    pt = []
-    max_ = 0
-    res=[0]*n
-    DFS(1, )
-    print(max_)
+    pv = [10, 25, 15, 6, 7]
+    pt = [5, 12, 8, 3, 4]
+    res = -2147000000
+    DFS(0, 0, 0)
+    print(res)
