@@ -1,0 +1,11 @@
+strip(): 양쪽 여백 제거
+
+split() :  화이트스페이스 다 제거
+
+
+list1 = ["Harry", "Porter"]
+x = "_".join(list1)  =  Harry_Porter
+
+text = "  hi bi  ci   di "
+t2 = text.strip().split()    => ['hi', 'bi', 'ci', 'di']
+print(t2)
